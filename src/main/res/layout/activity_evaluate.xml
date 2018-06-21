@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".module.order.EvaluateActivity">
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_chevron_left_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="评价晒单"
+            android:textColor="@android:color/black"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/iv_evaluate"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/evaluate_ic_evaluate" />
+
+        <TextView
+            android:id="@+id/tv_small_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@+id/iv_evaluate"
+            android:text="你的评价"
+            android:textSize="14dp" />
+
+
+        <EditText
+            android:id="@+id/et_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_evaluate"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/common_bg_gray_border_10x10"
+            android:gravity="top"
+            android:maxLength="40"
+            android:hint="简单概括一下你的评价"
+            android:lines="5"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/word_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/et_comment"
+            android:layout_alignRight="@+id/et_comment"
+            android:padding="10dp"
+            android:text="0/40"
+            />
+    </RelativeLayout>
+
+    <include layout="@layout/line_gray_divider"
+             android:layout_height="1dp"
+             android:layout_width="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/ly_add_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/common_bg_gray_dash_border">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/evaluate_ic_camera" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="添加照片"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/ly_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp"
+                android:paddingTop="12dp" />
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <include layout="@layout/line_gray_divider"
+             android:layout_height="1dp"
+             android:layout_width="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/iv_evaluate_tag"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/evaluate_ic_tag" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_evaluate_tag"
+            android:paddingLeft="4dp"
+            android:text="选择推荐标签"
+            android:textSize="14dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_evaluate_tag"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_good_goods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/common_bg_gray_border_8x4"
+                android:text="推荐好货" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include layout="@layout/line_gray_divider"
+             android:layout_height="1dp"
+             android:layout_width="match_parent"/>
+
+    <Button
+        android:id="@+id/bt_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="28dp"
+        android:background="#ff0000"
+        android:text="发布"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+</LinearLayout>

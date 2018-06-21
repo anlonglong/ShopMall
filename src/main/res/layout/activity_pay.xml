@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".module.pay.PayActivity">
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_chevron_left_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="支付页面"
+            android:textColor="@android:color/black"/>
+    </RelativeLayout>
+    <com.allen.library.SuperTextView
+        android:id="@+id/order_money"
+        android:layout_width="match_parent"
+        app:sLeftTextString="订单金额"
+        android:layout_height="50dp"
+        app:sRightTextColor="@color/orange"
+        app:sRightTextString="00"/>
+    <include layout="@layout/line_gray_divider"/>
+    <com.allen.library.SuperTextView
+        android:id="@+id/pay_weixin"
+        android:layout_width="match_parent"
+        app:sLeftIconRes="@drawable/pay_ic_wechat"
+        app:sLeftTopTextString="微信支付"
+        app:sLeftTopTextSize="18sp"
+        app:sLeftTextGravity="left"
+        app:sLeftBottomTextSize="14sp"
+        app:sRightIconRes="@drawable/ic_chevron_right_black_24dp"
+        app:sLeftBottomTextColor="#a1a0a0"
+        app:sLeftBottomTextString="微信安全支付"
+        android:layout_height="100dp"/>
+    <com.allen.library.SuperTextView
+        android:id="@+id/pay_zhifubao"
+        android:layout_width="match_parent"
+        app:sLeftIconRes="@drawable/pay_ic_zhifubao"
+        app:sLeftTopTextString="支付宝支付"
+        app:sLeftTopTextSize="18sp"
+        app:sLeftTextGravity="left"
+        app:sLeftBottomTextSize="14sp"
+        app:sRightIconRes="@drawable/ic_chevron_right_black_24dp"
+        app:sLeftBottomTextColor="#a1a0a0"
+        app:sLeftBottomTextString="支付宝在线支付服务"
+        android:layout_height="100dp"/>
+    <com.allen.library.SuperTextView
+        android:id="@+id/pay_QQ"
+        android:layout_width="match_parent"
+        app:sLeftIconRes="@drawable/pay_ic_qq"
+        app:sLeftTopTextString="QQ钱包支付"
+        app:sLeftTopTextSize="18sp"
+        app:sLeftTextGravity="left"
+        app:sLeftBottomTextSize="14sp"
+        app:sRightIconRes="@drawable/ic_chevron_right_black_24dp"
+        app:sLeftBottomTextColor="#a1a0a0"
+        app:sLeftBottomTextString="QQ钱包在线支付服务"
+        android:layout_height="100dp"/>
+</LinearLayout>

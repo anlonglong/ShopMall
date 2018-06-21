@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <cn.bingoogolapple.bgabanner.BGABanner
+        android:id="@+id/home_first_banner"
+        android:layout_width="0dp"
+        app:banner_pointAutoPlayAble="true"
+        app:banner_pointContainerBackground="@android:color/transparent"
+        app:banner_pointLeftRightMargin="3dp"
+        app:banner_pointTopBottomMargin="5dp"
+        app:banner_pointDrawable="@drawable/selector_point"
+        android:layout_height="150dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/home_first_category_list"
+        app:layout_constraintTop_toBottomOf="@id/home_first_banner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+</android.support.constraint.ConstraintLayout>

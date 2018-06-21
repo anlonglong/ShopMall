@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".module.user.AddAddressActivity">
+
+    <RelativeLayout
+        android:id="@+id/top_location"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_chevron_left_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="添加地址"
+            android:textColor="@android:color/black"/>
+    </RelativeLayout>
+    <include layout="@layout/line_gray_divider"
+             android:layout_height="10dp"
+             android:layout_width="match_parent"/>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="收货人"
+            android:maxLines="1"
+            android:singleLine="true"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/cellphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="联系电话"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:singleLine="true"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="所在地区"
+            android:maxLines="1"
+            android:singleLine="true"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/stress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="街道"
+            android:maxLines="1"
+            android:singleLine="true"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/detail_address"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="start"
+            android:hint="详细地址"
+            />
+    </android.support.design.widget.TextInputLayout>
+    <include layout="@layout/line_gray_divider"
+             android:layout_height="10dp"
+             android:layout_width="match_parent"/>
+    <CheckedTextView
+        android:id="@+id/default_address"
+        android:layout_width="match_parent"
+        android:text="设为默认地址"
+        android:paddingHorizontal="10dp"
+        android:filterTouchesWhenObscured="true"
+        android:checkMark="?android:attr/listChoiceIndicatorSingle"
+        android:gravity="center_vertical"
+        android:layout_height="50dp"/>
+    <include layout="@layout/line_gray_divider"
+             android:layout_height="10dp"
+             android:layout_width="match_parent"/>
+    <TextView
+
+        android:layout_marginTop="20dp"
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#e7ff0000"
+        android:textColor="@android:color/white"
+        android:text="保存"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"/>
+</LinearLayout>

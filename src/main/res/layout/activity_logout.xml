@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".module.user.UserInfoActivity">
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_chevron_left_black_24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="用户信息"
+            android:textColor="@android:color/black"/>
+    </RelativeLayout>
+    <include layout="@layout/line_gray_divider"/>
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_account"
+        android:layout_width="match_parent"
+        app:sLeftTextString="账户"
+        tools:sRightTextString="aaa"
+        android:layout_height="50dp"/>
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_gender"
+        android:layout_width="match_parent"
+        app:sLeftTextString="性别"
+        tools:sRightTextString="女"
+        android:layout_height="50dp"/>
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_age"
+        android:layout_width="match_parent"
+        app:sLeftTextString="年龄"
+        tools:sRightTextString="0"
+        android:layout_height="50dp"/>
+
+    <include layout="@layout/line_gray_divider"/>
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_user_info"
+        android:layout_width="match_parent"
+        app:sLeftTextString="修改用户信息"
+        app:sRightIconRes="@drawable/ic_chevron_right_black_24dp"
+        android:layout_height="50dp"/>
+    <com.allen.library.SuperTextView
+        android:id="@+id/stv_location_manager"
+        android:layout_width="match_parent"
+        app:sLeftTextString="我的收货地址"
+        app:sRightIconRes="@drawable/ic_chevron_right_black_24dp"
+        android:layout_height="50dp"/>
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="16dp"
+        style="?android:textAppearanceSmall"
+        android:background="@color/orange"
+        android:text="退出登录"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_height="50dp"/>
+</LinearLayout>

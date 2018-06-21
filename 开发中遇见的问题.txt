@@ -1,0 +1,49 @@
+在做管理地址的页面的时候，需求是，用户的默认地址可以选择为列表中的某一项，
+点击哪一个条目中的checkbox，该条目就成为默认地址，然后修改其他条目的数据，
+史之成为非默认的，但是在实际做的时候，点击某一个条目，程序会奔溃，
+错误日志
+
+java.lang.IllegalStateException: Cannot call this method while RecyclerView is
+computing a layout or scrolling
+
+意思是：RecyclerView计算布局或者滚动时调用了不合状态的方法
+//解决方案在下面2片博客中找到的
+http://blog.devwiki.net/index.php/2016/07/19/recycler-view-problem-note.html
+https://stackoverflow.com/questions/27070220/android-recyclerview-notifydatasetchanged-illegalstateexception
+
+
+
+05-29 21:35:19.467 24400-24400/com.aillen.shopmall E/AndroidRuntime: FATAL EXCEPTION: main
+    Process: com.aillen.shopmall, PID: 24400
+    java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState
+        at android.support.v4.app.FragmentManagerImpl.checkStateLoss(FragmentManager.java:2044)
+        at android.support.v4.app.FragmentManagerImpl.enqueueAction(FragmentManager.java:2067)
+        at android.support.v4.app.BackStackRecord.commitInternal(BackStackRecord.java:680)
+        at android.support.v4.app.BackStackRecord.commit(BackStackRecord.java:634)
+        at android.support.v4.app.DialogFragment.show(DialogFragment.java:143)
+        at com.aillen.shopmall.module.detail.bottomdialog.BottomDialog.show(BottomDialog.kt:77)
+        at com.aillen.shopmall.module.detail.bottomdialog.BottomDialog$Companion.show(BottomDialog.kt:35)
+        at com.aillen.shopmall.module.detail.DetailActivity.onClick(DetailActivity.kt:68)
+        at android.view.View.performClick(View.java:6334)
+        at android.view.View$PerformClick.run(View.java:24921)
+        at android.os.Handler.handleCallback(Handler.java:790)
+        at android.os.Handler.dispatchMessage(Handler.java:99)
+        at android.os.Looper.loop(Looper.java:164)
+        at android.app.ActivityThread.main(ActivityThread.java:6753)
+        at java.lang.reflect.Method.invoke(Native Method)
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:482)
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:807)
+
+
+viewModule中不应该持有activty/fragment的引用的原因是：viewmodule和activty/fragment的生命周期不同，
+在屏幕旋转或者配置变化的时候activty/fragment会销毁，而viewModule不会，这样的话，当activty/fragment销毁的时候，
+发现viewModule持有activty/fragment的引用导致无法被回收，这就造成了内存泄漏。viewmodule中可以持有多个livedata，不同的liveData
+提供不同的数据给界面。
+
+
+在做购物车模块的时候，用户已经登录，来到了购物车页面，此时显示用户购物车中的产品，但是一会后用户退出登录，
+再次回到购物车页面的时候原本数据应该清除了，但是实际却没有，刚开始想的是用观察者模式，观察用户登录or退出登录的操作，之后执行一些
+操作，然而，在通知观察则之后，却获取不到所在fragment的控件的引用和宿主activity的引用，原因是，那个时候activity已经被系统回收了，
+而fragment却没有回收，后面通过eventBus来传递事件通知观察者的。
+
+

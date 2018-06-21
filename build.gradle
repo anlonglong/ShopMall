@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'bimukey'
+            keyPassword 'bimu321'
+            storeFile file('/Users/jacky/Desktop/MyApplication/shopmall/bimukey.jks')
+            storePassword 'bimu321'
+        }
+    }
+    buildToolsVersion '26.0.2'
+    compileSdkVersion 26
+//**bmob-sdk版本依赖包，用于兼容Android6.0系统**
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.aillen.shopmall"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'pub.devrel:easypermissions:0.4.3'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
+    //专门用来操作recycleView#adapter的
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.38'
+    //专门用来添加刷新功能的
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    compile 'cn.bmob.android:bmob-sdk:3.5.5'
+    compile 'cn.bmob.android:http-legacy:1.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'android.arch.persistence.room:runtime:1.1.0'
+    kapt "android.arch.persistence.room:compiler:1.1.0"
+    //BGABanner
+    compile 'cn.bingoogolapple:bga-banner:2.2.4@aar'
+    compile 'com.github.lygttpod:SuperTextView:2.1.5'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    //implementation "android.arch.lifecycle:common-java8:1.1.1"
+    compile 'org.jetbrains.anko:anko-common:0.9'
+    compile 'me.iwf.photopicker:PhotoPicker:0.9.5@aar'
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.18'
+    //    implementation 'org.jetbrains.anko:anko:0.10.5'
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.2.1'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation files('libs/Msc.jar')
+    implementation files('libs/Sunflower.jar')
+}
