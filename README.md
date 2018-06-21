@@ -1,16 +1,16 @@
 #简介
 ### 一 截图
-- 应用的部分截图放在shopmall文件夹下面的screenshot文件中
+- 应用的部分截图放在shopmall文件夹下面的screenshot文件夹中
 ### 二 APK下载
 - 在shopmall文件夹下面的release文件中有打包好的apk
-- [扫码下载APK的链接](https://fir.im/8t1r)
+- 另外还有扫码下载连接[扫码下载APK的链接](https://fir.im/8t1r)
 ### 三 框架&技术
 #### 框架
    项目的整体结构采用的是MVP分层架构，但是部分的页面并没有采用mvp架构，
    比如：分类，购物车等模块，这些模块
    采用的是google开发架构组件中的viewModel&&LiveData来配合开发的，
-   在配合kotlin的函数式参数，很好的实
-   了数据的展示，吧View层和model层进行了高度分离，达到了高耦合的目的。
+   再配合kotlin的函数式参数，很好的实
+   了数据的展示，把View层和model层进行了高度分离，达到了低耦合的目的。
 #### 技术
 1. 数据存储采用的是google推荐的repository层来维护的，
 数据库采用的google开发组件中的另外一个组件Room，
