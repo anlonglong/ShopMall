@@ -33,10 +33,8 @@ repository层统一处理和数据存储有关的一切操作
 
 ### 关于我
 Email： 940752944@qq.com
-# License
--------
+#  License
 Copyright 2018 anlonglong
-
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
